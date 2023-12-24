@@ -1,0 +1,27 @@
+class Casa:
+    def __init__(self, color, techo, pisos):
+        self.color = color
+        self.techo = techo
+        self.pisos = pisos
+        self.areaConstruida = 80
+
+    def vender(self, incremento):
+        """Aumenta el area de la casa."""
+        self.area += incremento
+        print(f"El {self.techo} {self.pisos} cambió a {self.areaConstruida} m2")
+
+    def alquilar(self, decremento):
+        """Disminuye el area de la casa."""
+        self.area = max(80, self.area - decremento)
+        print(f"El {self.techo} {self.pisos} permaneció a {self.areaConstruida} m2")
+
+    def __str__(self):
+        """Devuelve una representación en cadena de la casa."""
+        return f"Casa: {self.techo} {self.pisos}, Color: {self.color}, Area: {self.areaConstruida} m2"
+
+
+# Ejemplo de creación y uso de un objeto Casa
+mi_casa = Casa('blanca', 'Tejas', '2')
+
+# Llamada al método __str__
+print(mi_casa)  # Esto llamará automáticamente al método __str__ y mostrará la información de la casa
